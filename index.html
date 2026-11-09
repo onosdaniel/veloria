@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veloria is a considered fashion experience for people who dress with intention.">
+    <title>Veloria — The art of becoming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a class="logo" href="index.html">VELORIA<span>.</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#story" onclick="closeMenu()">Our point of view</a></li>
+            <li><a href="#gallery" onclick="closeMenu()">Collection</a></li>
+            <li><a href="#interactive" onclick="closeMenu()">Style concierge</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">THE VELORIA EDIT · 2026</p>
+                    <h1>The art of becoming.</h1>
+                    <p>Veloria is a considered wardrobe for the way you are becoming — thoughtful silhouettes, expressive details, and pieces that stay with you.</p>
+                    <div class="hero-actions">
+                        <a class="cta-button" href="#gallery">Explore collection <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1571513800374-df1bbe650e56?w=900&auto=format&fit=crop&q=80" alt="Model wearing a refined fashion look">
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="story">
+            <div class="story-intro">
+                <p class="eyebrow">WHY VELORIA</p>
+                <h2>Style is not a uniform. It is a language.</h2>
+            </div>
+            <div class="story-body">
+                <p>We believe the best wardrobe does not shout for attention. It creates a sense of recognition — the feeling of seeing yourself more clearly in the mirror.</p>
+                <p>Every Veloria edit balances modern lines with lived-in ease. Designed to move from the first coffee to the last light, each piece makes room for your story.</p>
+                <a class="inline-link" href="questionnaire.html">Meet your style profile <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CURATED FOR YOUR EVERYDAY</p>
+                    <h2 class="section-title">Featured collection</h2>
+                </div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&auto=format&fit=crop&q=80" alt="Soft structured fashion look"><div class="gallery-caption"><span>01</span><strong>Soft structure</strong><small>For slow mornings</small></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700&auto=format&fit=crop&q=80" alt="Evening fashion look"><div class="gallery-caption"><span>02</span><strong>After hours</strong><small>For golden hour</small></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&auto=format&fit=crop&q=80" alt="Clean modern clothing collection"><div class="gallery-caption"><span>03</span><strong>Clean lines</strong><small>For new rituals</small></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632149877166-f75d49000351?w=700&auto=format&fit=crop&q=80" alt="Contemporary city fashion look"><div class="gallery-caption"><span>04</span><strong>New classics</strong><small>For the city</small></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512068549487-5e79d74c7fc3?w=700&auto=format&fit=crop&q=80" alt="Fashion look in motion"><div class="gallery-caption"><span>05</span><strong>In motion</strong><small>For anywhere</small></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?w=700&auto=format&fit=crop&q=80" alt="Fashion detail and finishing touch"><div class="gallery-caption"><span>06</span><strong>The finishing touch</strong><small>For the details</small></div></div>
+            </div>
+        </section>
+
+        <section class="interactive-section" id="interactive">
+            <div class="interactive-container">
+                <div class="interactive-kicker"><span>THE STYLE CONCIERGE</span><span>01 / 02</span></div>
+                <div class="interactive-copy">
+                    <p class="eyebrow">A LITTLE SELF-DISCOVERY</p>
+                    <h2 class="interactive-title" id="interactive-text">Are you ready for fashion?</h2>
+                    <p id="interactive-description">Answer a few considered questions and we’ll create a starting point for your personal Veloria edit.</p>
+                </div>
+                <div class="interactive-result">
+                    <img class="interactive-image" src="" alt="Clothing textures from the Veloria collection">
+                    <div class="result-label" id="result-label">YOUR EDIT AWAITS</div>
+                </div>
+                <div class="interactive-gallery" aria-label="Veloria style previews">
+                    <figure class="interactive-gallery-card interactive-gallery-card-main">
+                        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=700&auto=format&fit=crop&q=80" alt="Model in a tailored neutral fashion look">
+                        <figcaption>01 / Tailored ease</figcaption>
+                    </figure>
+                    <figure class="interactive-gallery-card interactive-gallery-card-offset">
+                        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=700&auto=format&fit=crop&q=80" alt="Editorial fashion detail in motion">
+                        <figcaption>02 / In motion</figcaption>
+                    </figure>
+                    <figure class="interactive-gallery-card interactive-gallery-card-small">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=80" alt="Elegant fashion styling detail">
+                        <figcaption>03 / The detail</figcaption>
+                    </figure>
+                </div>
+                <div class="button-group" id="button-group">
+                    <a class="interactive-btn accept" href="questionnaire.html">Yes, let’s begin <i class="fas fa-arrow-right"></i></a>
+                    <button class="interactive-btn decline" onclick="handleNo()">Not yet</button>
+                </div>
+                <a class="reset-button" id="reset-button" href="#interactive" hidden>Start again</a>
+            </div>
+        </section>
+
+        <section class="journal-section">
+            <div class="journal-card">
+                <p class="eyebrow">THE VELORIA JOURNAL</p>
+                <h2>Notes on dressing with intention.</h2>
+                <p>Seasonal moodboards, styling rituals, and conversations with people making the everyday extraordinary.</p>
+                <a class="inline-link" href="contact.html">Join the conversation <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="journal-number">03<br><span>Stories for<br>the well-dressed</span></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-video">
+            <video autoplay controls muted loop playsinline poster="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=1400&auto=format&fit=crop&q=80">
+                <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_30fps.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+            </video>
+            <div class="video-overlay"><span>VELORIA RUNWAY / 01</span><strong>In motion, as intended.</strong></div>
+        </div>
+        <div class="footer-bottom">
+            <div><a class="logo footer-logo" href="index.html">VELORIA<span>.</span></a><p>Luxury, made personal.</p></div>
+            <div class="footer-links"><a href="questionnaire.html">Style questionnaire</a><a href="contact.html">Contact atelier</a></div>
+            <p class="copyright">&copy; 2026 Veloria. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

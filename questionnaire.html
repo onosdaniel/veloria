@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover your Veloria fashion style profile.">
+    <title>Find Your Style — Veloria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+    <nav>
+        <a class="logo" href="index.html">VELORIA<span>.</span></a>
+        <a class="nav-back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+    </nav>
+    <main class="questionnaire-page">
+        <div class="questionnaire-heading">
+            <p class="eyebrow">THE STYLE CONCIERGE · 02 / 02</p>
+            <h1>Let’s find your point of view.</h1>
+            <p>There are no wrong answers. Choose what feels like you now, and we’ll translate it into a Veloria style profile.</p>
+        </div>
+        <form id="styleQuiz" class="style-quiz">
+            <fieldset class="quiz-step">
+                <legend><span>01</span> Your ideal morning looks like...</legend>
+                <label><input type="radio" name="morning" value="minimal" required><span>Quiet coffee, clean lines, no rush.</span></label>
+                <label><input type="radio" name="morning" value="romantic"><span>Fresh flowers, music, and something beautiful.</span></label>
+                <label><input type="radio" name="morning" value="bold"><span>A strong coffee and an even stronger outfit.</span></label>
+            </fieldset>
+            <fieldset class="quiz-step">
+                <legend><span>02</span> The detail you always notice is...</legend>
+                <label><input type="radio" name="detail" value="minimal" required><span>The perfect cut and a beautiful fabric.</span></label>
+                <label><input type="radio" name="detail" value="romantic"><span>A delicate finish, colour, or unexpected softness.</span></label>
+                <label><input type="radio" name="detail" value="bold"><span>The piece everyone else would be afraid to wear.</span></label>
+            </fieldset>
+            <fieldset class="quiz-step">
+                <legend><span>03</span> Your wardrobe should make you feel...</legend>
+                <label><input type="radio" name="feeling" value="minimal" required><span>Grounded, clear, and effortlessly put together.</span></label>
+                <label><input type="radio" name="feeling" value="romantic"><span>Expressive, warm, and a little enchanted.</span></label>
+                <label><input type="radio" name="feeling" value="bold"><span>Unmissable, energised, and entirely yourself.</span></label>
+            </fieldset>
+            <button class="cta-button quiz-submit" type="submit">Reveal my style <i class="fas fa-arrow-right"></i></button>
+        </form>
+        <section id="quizResult" class="quiz-result" hidden>
+            <p class="eyebrow">YOUR VELORIA PROFILE</p>
+            <h2 id="profileTitle"></h2>
+            <p id="profileDescription"></p>
+            <div class="result-actions"><a class="cta-button" href="contact.html">Talk to the atelier</a><button class="text-button" type="button" id="retakeQuiz">Retake questionnaire</button></div>
+        </section>
+    </main>
+    <script>
+        const quiz = document.getElementById('styleQuiz');
+        const result = document.getElementById('quizResult');
+        const profiles = {
+            minimal: {
+                title: 'The Quiet Architect',
+                description: 'You are drawn to considered proportions, tactile neutrals, and pieces that earn their place. Your edit is clean, intelligent, and quietly unforgettable.'
+            },
+            romantic: {
+                title: 'The Modern Romantic',
+                description: 'You notice the feeling in a piece. Your edit pairs soft movement, thoughtful details, and a little poetry with the ease of everyday dressing.'
+            },
+            bold: {
+                title: 'The Statement Maker',
+                description: 'You dress with a point of view. Your edit brings confident silhouettes, considered contrast, and the kind of energy that changes the room.'
+            }
+        };
+
+        quiz.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const answers = [...new FormData(quiz).values()];
+            const scores = answers.reduce((total, answer) => {
+                total[answer] += 1;
+                return total;
+            }, { minimal: 0, romantic: 0, bold: 0 });
+            const profileKey = Object.keys(scores).sort((a, b) => scores[b] - scores[a])[0];
+            document.getElementById('profileTitle').textContent = profiles[profileKey].title;
+            document.getElementById('profileDescription').textContent = profiles[profileKey].description;
+            quiz.hidden = true;
+            result.hidden = false;
+            result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        document.getElementById('retakeQuiz').addEventListener('click', function () {
+            quiz.reset();
+            quiz.hidden = false;
+            result.hidden = true;
+            quiz.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Veloria atelier.">
+    <title>Contact the Atelier — Veloria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+    <nav>
+        <a class="logo" href="index.html">VELORIA<span>.</span></a>
+        <a class="nav-back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+    </nav>
+    <main class="contact-page">
+        <div class="contact-page-intro">
+            <p class="eyebrow">THE VELORIA ATELIER</p>
+            <h1>Let’s start a conversation.</h1>
+            <p>Whether you have a question about a piece, want a considered recommendation, or simply want to tell us what you are looking for, we are here.</p>
+            <div class="contact-page-details">
+                <p><strong>Email</strong> hello@veloria.com</p>
+                <p><strong>Hours</strong> Mon–Fri, 9am–6pm EST</p>
+                <p><strong>Visit</strong> 123 Luxury Avenue, New York</p>
+            </div>
+        </div>
+        <form class="contact-form standalone-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="hidden" name="_subject" value="New message for the Veloria atelier">
+            <input type="hidden" name="_next" value="https://your-domain.com/contact.html?sent=true">
+            <div class="form-message" id="formMessage" role="status"></div>
+            <div class="form-row">
+                <div class="form-group"><label for="name">Full name *</label><input id="name" name="name" type="text" autocomplete="name" required minlength="2"></div>
+                <div class="form-group"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label for="subject">Subject *</label><input id="subject" name="subject" type="text" required minlength="3"></div>
+                <div class="form-group"><label for="category">What can we help with? *</label><select id="category" name="category" required><option value="">Select one...</option><option>Product information</option><option>Style consultation</option><option>Custom order</option><option>General inquiry</option></select></div>
+            </div>
+            <div class="form-group"><label for="message">Your message *</label><textarea id="message" name="message" required minlength="10" placeholder="Tell us what is on your mind..."></textarea></div>
+            <div class="checkbox-item"><input id="privacy" name="privacy" type="checkbox" required><label for="privacy">I agree to the privacy policy and understand , This form would be used to improve our services. *</label></div>
+            <button class="submit-btn" type="submit">Send to the atelier <i class="fas fa-arrow-right"></i></button>
+            <p class="form-note">Your message is securely handled, We aim to reply within one business day.</p>
+        </form>
+    </main>
+    <script>
+        const sentMessage = new URLSearchParams(window.location.search).get('sent');
+        if (sentMessage === 'true') {
+            const message = document.getElementById('formMessage');
+            message.className = 'form-message success';
+            message.textContent = 'Thank you. Your message is with the atelier.';
+        }
+    </script>
+</body>
+</html>
